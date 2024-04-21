@@ -1,0 +1,5 @@
+>> is extraction operator
+
+when you read value in an integer variable with std::cin >>
+    - if type an string, the value will auto into 0
+    - if type an float, the value is floored

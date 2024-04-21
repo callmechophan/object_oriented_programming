@@ -20,6 +20,12 @@ int main()
 
     // 6 continue
     std::cout << "6. Continue " << std::endl;
+    std::cout << "====================" << std::endl;
+    std::cout << "Type in 1-6: ";
+    
+    int user_option;
+    std::cin >> user_option;
+    std::cout << "You chose: " << user_option << std::endl;
 
     return 0;
 };
