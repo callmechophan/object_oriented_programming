@@ -2,6 +2,18 @@
 #include <string>
 #include <vector>
 
+enum class order_book_type{bid, ask};
+
+class order_book
+{
+    public:
+        double price;
+        double amount;
+        std::string timestamp;
+        std::string product;
+        order_book_type order_type;
+};
+
 void print_menu()
 {
     std::cout << "Choose an option: " << std::endl;
@@ -101,28 +113,15 @@ void process_user_option(int user_option)
 
 int main()
 {
-    enum class OrderBookType{bid, ask};
+    order_book *o = new order_book();
 
-    std::vector<double> prices;
-    std::vector<double> amounts;
-    std::vector<std::string> timestamps;
-    std::vector<std::string> products;
-    std::vector<OrderBookType> order_types;
+    o->price = 7.44564869;
+    o->amount = 0.02187308;
+    o->timestamp = "2020/03/17 17:01:24.884492";
+    o->product = "ETH/BTC";
+    o->order_type == order_book_type::bid;
 
-    prices.push_back(7.44564869);
-    amounts.push_back(0.02187308);
-    timestamps.push_back("2020/03/17 17:01:24.884492");
-    products.push_back("ETH/BTC");
-    order_types.push_back(OrderBookType::bid);
-
-    prices.push_back(3.467434);
-    amounts.push_back(0.02187307);
-    timestamps.push_back("2020/03/17 17:01:24.884492");
-    products.push_back("ETH/BTC");
-    order_types.push_back(OrderBookType::bid);
-
-    std::cout << "prices: " << prices[0] << std::endl;
-    std::cout << "prices: " << prices[1] << std::endl;
+    std::cout << "price: " << o->price << std::endl;
 
     // while (true)
     // {
