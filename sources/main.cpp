@@ -104,7 +104,8 @@ int main()
     double amount = 0.02187308;
     std::string timestamp{"2020/03/17 17:01:24.884492"}; // instead of use equals "=", use the curly brackets "{}", calling the constructor
     std::string product{"ETH/BTC"};
-    std::string order_type{"bid"};
+    enum class OrderBookType{bid, ask};
+    OrderBookType order_type = OrderBookType::bid;
 
     while (true)
     {

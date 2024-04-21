@@ -1,0 +1,5 @@
+enum
+    - is a collection of named integer constant means it's each element is assigned by integer value (or automatically convert element to integer)
+
+enum class
+    - it doesn't allow implicit conversion to int
