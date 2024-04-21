@@ -1,0 +1,3 @@
+on trading systems
+    - an offer is someone offering to sell
+    - a bid is someone offering to buy
