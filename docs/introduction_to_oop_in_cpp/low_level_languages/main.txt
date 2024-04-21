@@ -1,0 +1,9 @@
+high-level is when
+    - it's highly abstracted
+    - it doesn't necessarily know how the underlying hardware functions
+
+low-level is when
+    - you do have access to the underlying hardware
+    - and you have to take more account of how the hardware operates
+
+c++ is low-level language
