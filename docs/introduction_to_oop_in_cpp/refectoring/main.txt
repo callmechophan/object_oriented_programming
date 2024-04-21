@@ -1,0 +1,7 @@
+reason to refactor
+    - the code is too repetitive
+    - the code has a large block which doest lots of different things
+
+refactoring
+    - is all about taking those different blocks of code and telling into different modules
+    - is all about that idea of making your code more modular and more clear about what each bit of the program is trying to do
