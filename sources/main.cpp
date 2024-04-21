@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 void print_menu()
 {
@@ -100,21 +101,37 @@ void process_user_option(int user_option)
 
 int main()
 {
-    double price = 7.44564869;
-    double amount = 0.02187308;
-    std::string timestamp{"2020/03/17 17:01:24.884492"}; // instead of use equals "=", use the curly brackets "{}", calling the constructor
-    std::string product{"ETH/BTC"};
     enum class OrderBookType{bid, ask};
-    OrderBookType order_type = OrderBookType::bid;
 
-    while (true)
-    {
-        print_menu();
+    std::vector<double> prices;
+    std::vector<double> amounts;
+    std::vector<std::string> timestamps;
+    std::vector<std::string> products;
+    std::vector<OrderBookType> order_types;
 
-        int user_option = get_user_option();
+    prices.push_back(7.44564869);
+    amounts.push_back(0.02187308);
+    timestamps.push_back("2020/03/17 17:01:24.884492");
+    products.push_back("ETH/BTC");
+    order_types.push_back(OrderBookType::bid);
 
-        process_user_option(user_option);
-    };
+    prices.push_back(3.467434);
+    amounts.push_back(0.02187307);
+    timestamps.push_back("2020/03/17 17:01:24.884492");
+    products.push_back("ETH/BTC");
+    order_types.push_back(OrderBookType::bid);
+
+    std::cout << "prices: " << prices[0] << std::endl;
+    std::cout << "prices: " << prices[1] << std::endl;
+
+    // while (true)
+    // {
+    //     print_menu();
+
+    //     int user_option = get_user_option();
+
+    //     process_user_option(user_option);
+    // };
 
     return 0;
 };
