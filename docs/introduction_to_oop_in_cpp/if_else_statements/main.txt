@@ -1,0 +1,1 @@
+use a switch statement to achieve a similar control flow structure to multiple if statement
