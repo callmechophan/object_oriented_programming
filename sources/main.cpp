@@ -99,6 +99,9 @@ void process_user_option(int user_option)
 
 int main()
 {
+    double price = 7.44564869;
+    double amount = 0.02187308;
+
     while (true)
     {
         print_menu();
