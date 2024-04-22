@@ -1,0 +1,3 @@
+purpose of a member initialisation list
+    - it is a way to assign data passed into a constructor to data members
+    - it is a way to assign values to data members directly

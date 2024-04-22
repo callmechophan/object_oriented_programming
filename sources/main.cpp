@@ -16,13 +16,12 @@ class order_book
             const std::string& new_product,
             const order_book_type& new_order_type
         )
-        {
-            price = new_price;
-            amount = new_amount;
-            timestamp = new_timestamp;
-            product = new_product;
-            order_type = new_order_type;
-        };
+        :   price(new_price),
+            amount(new_amount),
+            timestamp(new_timestamp),
+            product(new_product),
+            order_type(new_order_type)
+        {}; // constructor initialisation list
 
         double price;
         double amount;
