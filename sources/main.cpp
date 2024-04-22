@@ -130,13 +130,28 @@ void process_user_option(int user_option)
 int main()
 {
     // vector of objects
-    std::vector<order_book> o;
+    std::vector<order_book> orders;
 
     // push directly
-    o.push_back(order_book{7.44564869, 0.02187308, "2020/03/17 17:01:24.884492", "ETH/BTC", order_book_type::bid});
-    o.push_back(order_book{3.467434, 0.02187307, "2020/03/17 17:01:24.884492", "ETH/BTC", order_book_type::bid});
+    orders.push_back(order_book{7.44564869, 0.02187308, "2020/03/17 17:01:24.884492", "ETH/BTC", order_book_type::bid});
+    orders.push_back(order_book{3.467434, 0.02187307, "2020/03/17 17:01:24.884492", "ETH/BTC", order_book_type::bid});
 
-    std::cout << "price: " << o[1].price << std::endl;
+    // const and reference
+    for (const order_book& o : orders) // "&" is reference, it not make a copy, it accessing the original version in the vector for better performance
+    {
+        std::cout << "price: " << o.price << std::endl;
+    };
+
+    // ++i
+    for (unsigned int i = 0; i < orders.size(); ++i)
+    {
+        std::cout << "price: " << orders[i].price << std::endl;
+    };
+
+    for (unsigned int i = 0; i < orders.size(); ++i)
+    {
+        std::cout << "price: " << orders.at(i).price << std::endl;
+    };
 
     // while (true)
     // {

@@ -1,0 +1,9 @@
+unsigned int: because an array index positive, we don't need negative number for our array index
+
+++i
+    - i++: it make a copy of data, increments the copy, and then assign the copy back to i
+    - ++i: increaments it directly in place, ++i uses less operations that i++ so it is the correct operator to use in loops, i++ is less efficient than ++i
+
+const and reference
+    - prefixing a variable with const in the iterator style loop for (const std::string& x : y)
+    - means we cannot change the state of the variable and is a good way to add a safety constraint to our code
