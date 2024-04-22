@@ -129,9 +129,14 @@ void process_user_option(int user_option)
 
 int main()
 {
-    order_book *o = new order_book(7.44564869, 0.02187308, "2020/03/17 17:01:24.884492", "ETH/BTC", order_book_type::bid);
+    // vector of objects
+    std::vector<order_book> o;
 
-    std::cout << "price: " << o->price << std::endl;
+    // push directly
+    o.push_back(order_book{7.44564869, 0.02187308, "2020/03/17 17:01:24.884492", "ETH/BTC", order_book_type::bid});
+    o.push_back(order_book{3.467434, 0.02187307, "2020/03/17 17:01:24.884492", "ETH/BTC", order_book_type::bid});
+
+    std::cout << "price: " << o[1].price << std::endl;
 
     // while (true)
     // {
