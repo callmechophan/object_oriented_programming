@@ -7,7 +7,7 @@
 int main()
 {
     manage_main manage_main;
-    manage_main.print_menu();
+    manage_main.init();
 
     return 0;
 };

@@ -1,7 +1,18 @@
 #include <iostream>
 #include "manage_main.h"
 
-void manage_main::init() {};
+void manage_main::init()
+{
+    int user_option;
+
+    while (true)
+    {
+        print_menu();
+        user_option = get_user_option();
+
+        process_user_option(user_option);
+    };
+};
 
 void manage_main::print_menu()
 {

@@ -1,8 +1,9 @@
 class manage_main
 {
     public:
+        // call this to start the sim
         void init();
-        
+
         void print_menu();
 
         void print_help();
