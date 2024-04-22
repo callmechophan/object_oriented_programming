@@ -7,6 +7,23 @@ enum class order_book_type{bid, ask};
 class order_book
 {
     public:
+        // custom constructor
+        order_book
+        (
+            const double& new_price,
+            const double& new_amount,
+            const std::string& new_timestamp,
+            const std::string& new_product,
+            const order_book_type& new_order_type
+        )
+        {
+            price = new_price;
+            amount = new_amount;
+            timestamp = new_timestamp;
+            product = new_product;
+            order_type = new_order_type;
+        };
+
         double price;
         double amount;
         std::string timestamp;
@@ -113,13 +130,7 @@ void process_user_option(int user_option)
 
 int main()
 {
-    order_book *o = new order_book();
-
-    o->price = 7.44564869;
-    o->amount = 0.02187308;
-    o->timestamp = "2020/03/17 17:01:24.884492";
-    o->product = "ETH/BTC";
-    o->order_type == order_book_type::bid;
+    order_book *o = new order_book(7.44564869, 0.02187308, "2020/03/17 17:01:24.884492", "ETH/BTC", order_book_type::bid);
 
     std::cout << "price: " << o->price << std::endl;
 
