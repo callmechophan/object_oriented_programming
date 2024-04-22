@@ -4,6 +4,7 @@ class manage_main
         // call this to start the sim
         void init();
 
+    private:
         void print_menu();
 
         void print_help();
