@@ -1,3 +1,8 @@
+#pragma once
+
+#include <vector>
+#include "order_book.h"
+
 class manage_main
 {
     public:
@@ -5,6 +10,8 @@ class manage_main
         void init();
 
     private:
+        void load_order_book();
+
         void print_menu();
 
         void print_help();
@@ -22,4 +29,6 @@ class manage_main
         int get_user_option();
 
         void process_user_option(int user_option);
+
+        std::vector<order_book> orders;
 };

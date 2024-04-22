@@ -3,6 +3,8 @@
 
 void manage_main::init()
 {
+    load_order_book();
+    
     int user_option;
 
     while (true)
@@ -13,6 +15,12 @@ void manage_main::init()
         process_user_option(user_option);
     };
 };
+
+void manage_main::load_order_book()
+{
+    orders.push_back(order_book{7.44564869, 0.02187308, "2020/03/17 17:01:24.884492", "ETH/BTC", order_book_type::bid});
+    orders.push_back(order_book{3.467434, 0.02187307, "2020/03/17 17:01:24.884492", "ETH/BTC", order_book_type::bid});
+}
 
 void manage_main::print_menu()
 {
@@ -44,7 +52,7 @@ void manage_main::print_help()
 
 void manage_main::print_market_stats()
 {
-    std::cout << "Market looks good " << std::endl;
+    std::cout << "OrderBook contains: " << orders.size() << std::endl;
 };
 
 void manage_main::enter_offer()
