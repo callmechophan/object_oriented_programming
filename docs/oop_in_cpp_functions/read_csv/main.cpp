@@ -52,11 +52,18 @@ std::vector<std::string> tokenise(std::string csv_line, char separator)
 
 int main()
 {
-    std::ifstream csv_file{"C:/Disk/cpp/object_oriented_programming/sources/datasets/dataa.csv"};
+    std::ifstream csv_file{"C:/Disk/cpp/object_oriented_programming/sources/datasets/data.csv"};
+    std::string line;
 
     if (csv_file.is_open())
     {
         std::cout << "File open " << std::endl;
+
+        while (std::getline(csv_file, line))
+        {
+            std::cout << "Read line: " << line << std::endl;
+        };
+
         csv_file.close();
     }
     else
