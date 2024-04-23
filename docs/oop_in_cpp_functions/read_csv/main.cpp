@@ -54,6 +54,7 @@ int main()
 {
     std::ifstream csv_file{"C:/Disk/cpp/object_oriented_programming/sources/datasets/data.csv"};
     std::string line;
+    std::vector<std::string> tokens;
 
     if (csv_file.is_open())
     {
@@ -62,6 +63,25 @@ int main()
         while (std::getline(csv_file, line))
         {
             std::cout << "Read line: " << line << std::endl;
+
+            tokens = tokenise(line, ','); // current tokens is a line, maximum size is 5, each element in token as value of attribute
+
+            if (tokens.size() != 5) // bad
+            {
+                std::cout << "Bad line " << std::endl;
+                continue;
+            };
+
+            // std::stod convert a string into a double
+            double price = std::stod(tokens[3]);
+            double amount = std::stod(tokens[4]);
+
+            std::cout << price << ":" << amount << std::endl;
+
+            // for (std::string& token : tokens)
+            // {
+            //     std::cout << token << std::endl;
+            // };
         };
 
         csv_file.close();
