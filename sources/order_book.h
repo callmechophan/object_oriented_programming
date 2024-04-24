@@ -2,7 +2,7 @@
 
 #include <string>
 
-enum class order_book_type{bid, ask};
+enum class order_book_type{bid, ask, unknown};
 
 class order_book
 {
@@ -16,6 +16,7 @@ class order_book
             const std::string& new_product,
             const order_book_type& new_order_type
         );
+        static order_book_type strings_to_order_book_type(const std::string& order_book_type_str);
     
         double price;
         double amount;

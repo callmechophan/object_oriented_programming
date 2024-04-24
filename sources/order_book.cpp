@@ -14,3 +14,19 @@ order_book::order_book
     product(new_product),
     order_type(new_order_type)
 {}; // constructor initialisation list
+
+order_book_type order_book::strings_to_order_book_type(const std::string& order_book_type_str)
+{
+    if (order_book_type_str == "bid")
+    {
+        return order_book_type::bid;
+    }
+    else if (order_book_type_str == "bid")
+    {
+        return order_book_type::ask;
+    }
+    else
+    {
+        return order_book_type::unknown;
+    };
+};
