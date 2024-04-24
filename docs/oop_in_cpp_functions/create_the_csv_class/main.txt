@@ -1,0 +1,2 @@
+static function
+    - we can call without needing to create an instance of class before hand
