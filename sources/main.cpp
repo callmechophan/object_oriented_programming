@@ -7,8 +7,9 @@
 
 int main()
 {
-    manage_main manage_main;
-    manage_main.init();
+    // manage_main manage_main;
+    // manage_main.init();
+    csv::read_csv("C:/Disk/cpp/object_oriented_programming/sources/datasets/data.csv");
 
     return 0;
 };
