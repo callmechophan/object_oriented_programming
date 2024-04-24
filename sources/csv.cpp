@@ -28,8 +28,6 @@ std::vector<order_book> csv::read_csv(std::string csv_filename)
         csv_file.close();
     };
 
-    std::cout << "Total: " << orders.size() << std::endl;
-
     return orders;
 };
 

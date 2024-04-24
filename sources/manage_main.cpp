@@ -1,5 +1,6 @@
 #include <iostream>
 #include "manage_main.h"
+#include "csv.h"
 
 void manage_main::init()
 {
@@ -18,8 +19,7 @@ void manage_main::init()
 
 void manage_main::load_order_book()
 {
-    orders.push_back(order_book{7.44564869, 0.02187308, "2020/03/17 17:01:24.884492", "ETH/BTC", order_book_type::bid});
-    orders.push_back(order_book{3.467434, 0.02187307, "2020/03/17 17:01:24.884492", "ETH/BTC", order_book_type::bid});
+    orders = csv::read_csv("C:/Disk/cpp/object_oriented_programming/sources/datasets/data.csv");
 }
 
 void manage_main::print_menu()
@@ -53,6 +53,24 @@ void manage_main::print_help()
 void manage_main::print_market_stats()
 {
     std::cout << "OrderBook contains: " << orders.size() << std::endl;
+    
+    unsigned int bids = 0;
+    unsigned int asks = 0;
+
+    for (order_book& order : orders)
+    {
+        if (order.order_type == order_book_type::bid)
+        {
+            bids++;
+        }
+        else if (order.order_type == order_book_type::ask)
+        {
+            asks++;
+        };
+    };
+
+    std::cout << "OrderBook contains: " << bids << " bids"  << std::endl;
+    std::cout << "OrderBook contains: " << asks << " asks" << std::endl;
 };
 
 void manage_main::enter_offer()

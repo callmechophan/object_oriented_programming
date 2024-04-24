@@ -21,7 +21,7 @@ order_book_type order_book::strings_to_order_book_type(const std::string& order_
     {
         return order_book_type::bid;
     }
-    else if (order_book_type_str == "bid")
+    else if (order_book_type_str == "ask")
     {
         return order_book_type::ask;
     }
