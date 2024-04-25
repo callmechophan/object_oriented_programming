@@ -51,6 +51,8 @@ void manage_main::print_market_stats()
 
         std::vector<order_book> order_where = orders.get_orders(order_book_type::ask, p, "2020/03/17 17:01:24.884492");
         std::cout << "Asks seen: " << order_where.size() << std::endl;
+        std::cout << "Max ask: " << manage_order_book::get_high_price(order_where) << std::endl;
+        std::cout << "Min ask: " << manage_order_book::get_low_price(order_where) << std::endl;
     };
 };
 

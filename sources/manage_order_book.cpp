@@ -49,3 +49,33 @@ std::vector<order_book> manage_order_book::get_orders(order_book_type type, std:
 
     return orders;
 };
+
+double manage_order_book::get_high_price(std::vector<order_book>& orders)
+{
+    double max = orders[0].price;
+
+    for (order_book& o : orders)
+    {
+        if (o.price > max)
+        {
+            max = o.price;
+        };
+    };
+
+    return max;
+};
+
+double manage_order_book::get_low_price(std::vector<order_book>& orders)
+{
+    double min = orders[0].price;
+
+    for (order_book& o : orders)
+    {
+        if (o.price < min)
+        {
+            min = o.price;
+        };
+    };
+
+    return min;
+};

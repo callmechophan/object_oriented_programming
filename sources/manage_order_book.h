@@ -16,6 +16,9 @@ class manage_order_book
 
         /**return vector of orders according to the send filters*/
         std::vector<order_book> get_orders(order_book_type type, std::string product, std::string timestamp);
+
+        static double get_high_price(std::vector<order_book>& orders);
+        static double get_low_price(std::vector<order_book>& orders);
     
     private:
         std::vector<order_book> orders_;

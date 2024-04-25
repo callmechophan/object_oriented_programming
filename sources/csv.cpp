@@ -94,8 +94,8 @@ order_book csv::strings_to_order_book(std::vector<std::string> tokens)
     try
     {
         // std::stod convert a string into a double
-        double price = std::stod(tokens[3]);
-        double amount = std::stod(tokens[4]);
+        price = std::stod(tokens[3]);
+        amount = std::stod(tokens[4]);
     }
     catch(const std::exception& e)
     {
