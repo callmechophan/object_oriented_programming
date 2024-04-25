@@ -34,5 +34,18 @@ std::vector<order_book> manage_order_book::get_orders(order_book_type type, std:
 {
     std::vector<order_book> orders;
 
+    for (order_book& order : orders_)
+    {
+        if
+        (
+            order.order_type == type
+            && order.product == product
+            && order.timestamp == timestamp
+        )
+        {
+            orders.push_back(order);
+        };
+    };
+
     return orders;
 };

@@ -48,6 +48,9 @@ void manage_main::print_market_stats()
     for (const std::string& p : orders.get_known_products())
     {
         std::cout << "Product: " << p << std::endl;
+
+        std::vector<order_book> order_where = orders.get_orders(order_book_type::ask, p, "2020/03/17 17:01:24.884492");
+        std::cout << "Asks seen: " << order_where.size() << std::endl;
     };
 };
 
