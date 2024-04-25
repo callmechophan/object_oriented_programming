@@ -2,6 +2,7 @@
 
 #include <vector>
 #include "order_book.h"
+#include "manage_order_book.h"
 
 class manage_main
 {
@@ -10,8 +11,6 @@ class manage_main
         void init();
 
     private:
-        void load_order_book();
-
         void print_menu();
 
         void print_help();
@@ -30,5 +29,5 @@ class manage_main
 
         void process_user_option(int user_option);
 
-        std::vector<order_book> orders;
+        manage_order_book orders{"C:/Disk/cpp/object_oriented_programming/sources/datasets/data.csv"};
 };

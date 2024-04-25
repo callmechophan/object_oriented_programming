@@ -3,9 +3,7 @@
 #include "csv.h"
 
 void manage_main::init()
-{
-    load_order_book();
-    
+{    
     int user_option;
 
     while (true)
@@ -16,11 +14,6 @@ void manage_main::init()
         process_user_option(user_option);
     };
 };
-
-void manage_main::load_order_book()
-{
-    orders = csv::read_csv("C:/Disk/cpp/object_oriented_programming/sources/datasets/data.csv");
-}
 
 void manage_main::print_menu()
 {
@@ -52,25 +45,25 @@ void manage_main::print_help()
 
 void manage_main::print_market_stats()
 {
-    std::cout << "OrderBook contains: " << orders.size() << std::endl;
+    // std::cout << "OrderBook contains: " << orders.size() << std::endl;
     
-    unsigned int bids = 0;
-    unsigned int asks = 0;
+    // unsigned int bids = 0;
+    // unsigned int asks = 0;
 
-    for (order_book& order : orders)
-    {
-        if (order.order_type == order_book_type::bid)
-        {
-            bids++;
-        }
-        else if (order.order_type == order_book_type::ask)
-        {
-            asks++;
-        };
-    };
+    // for (order_book& order : orders)
+    // {
+    //     if (order.order_type == order_book_type::bid)
+    //     {
+    //         bids++;
+    //     }
+    //     else if (order.order_type == order_book_type::ask)
+    //     {
+    //         asks++;
+    //     };
+    // };
 
-    std::cout << "OrderBook contains: " << bids << " bids"  << std::endl;
-    std::cout << "OrderBook contains: " << asks << " asks" << std::endl;
+    // std::cout << "OrderBook contains: " << bids << " bids"  << std::endl;
+    // std::cout << "OrderBook contains: " << asks << " asks" << std::endl;
 };
 
 void manage_main::enter_offer()
