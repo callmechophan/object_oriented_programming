@@ -16,4 +16,7 @@ class manage_order_book
 
         /**return vector of orders according to the send filters*/
         std::vector<order_book> get_orders(order_book_type type, std::string product, std::string timestamp);
+    
+    private:
+        std::vector<order_book> orders_;
 };
