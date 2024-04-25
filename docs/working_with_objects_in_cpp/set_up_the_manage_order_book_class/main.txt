@@ -1,0 +1,7 @@
+the correct order for designing a new class
+    - consider the problem
+    - consider how you want to use the class from the outside
+    - write the public interface for the class
+
+/** */
+    - this comments will be parsed by the IDE and used pop-up hints
