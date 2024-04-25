@@ -45,25 +45,10 @@ void manage_main::print_help()
 
 void manage_main::print_market_stats()
 {
-    // std::cout << "OrderBook contains: " << orders.size() << std::endl;
-    
-    // unsigned int bids = 0;
-    // unsigned int asks = 0;
-
-    // for (order_book& order : orders)
-    // {
-    //     if (order.order_type == order_book_type::bid)
-    //     {
-    //         bids++;
-    //     }
-    //     else if (order.order_type == order_book_type::ask)
-    //     {
-    //         asks++;
-    //     };
-    // };
-
-    // std::cout << "OrderBook contains: " << bids << " bids"  << std::endl;
-    // std::cout << "OrderBook contains: " << asks << " asks" << std::endl;
+    for (const std::string& p : orders.get_known_products())
+    {
+        std::cout << "Product: " << p << std::endl;
+    };
 };
 
 void manage_main::enter_offer()
