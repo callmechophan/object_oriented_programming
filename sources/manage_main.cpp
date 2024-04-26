@@ -78,6 +78,7 @@ void manage_main::print_wallet()
 void manage_main::go_to_next_time_frame()
 {
     std::cout << "Going to the next time frame " << std::endl;
+    current_time_ = manage_orders_.get_next_time(current_time_);
 };
 
 int manage_main::get_user_option()

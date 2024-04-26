@@ -84,3 +84,23 @@ std::string manage_order_book::get_earliest_time()
 {
     return orders_[0].timestamp;
 };
+
+std::string manage_order_book::get_next_time(std::string timestamp)
+{
+    std::string next_time;
+    for (order_book& o : orders_)
+    {
+        if (o.timestamp > timestamp)
+        {
+            next_time = o.timestamp;
+            break;
+        };
+    };
+
+    if (next_time == "")
+    {
+        next_time = orders_[0].timestamp;
+    };
+
+    return next_time;
+};

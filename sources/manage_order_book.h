@@ -22,6 +22,9 @@ class manage_order_book
 
         /**return the earliest time in the order_book*/
         std::string get_earliest_time();
+
+        /**return the next time after the sent time in the order_book*/
+        std::string get_next_time(std::string timestamp);
     
     private:
         std::vector<order_book> orders_;
