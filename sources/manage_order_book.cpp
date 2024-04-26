@@ -79,3 +79,8 @@ double manage_order_book::get_low_price(std::vector<order_book>& orders)
 
     return min;
 };
+
+std::string manage_order_book::get_earliest_time()
+{
+    return orders_[0].timestamp;
+};

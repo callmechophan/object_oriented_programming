@@ -19,6 +19,9 @@ class manage_order_book
 
         static double get_high_price(std::vector<order_book>& orders);
         static double get_low_price(std::vector<order_book>& orders);
+
+        /**return the earliest time in the order_book*/
+        std::string get_earliest_time();
     
     private:
         std::vector<order_book> orders_;

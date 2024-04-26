@@ -1,7 +1,6 @@
 #pragma once
 
 #include <vector>
-#include "order_book.h"
 #include "manage_order_book.h"
 
 class manage_main
@@ -29,5 +28,7 @@ class manage_main
 
         void process_user_option(int user_option);
 
-        manage_order_book orders{"C:/Disk/cpp/object_oriented_programming/sources/datasets/data.csv"};
+        std::string current_time_;
+
+        manage_order_book manage_orders_{"C:/Disk/cpp/object_oriented_programming/sources/datasets/data.csv"};
 };

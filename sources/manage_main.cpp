@@ -3,7 +3,8 @@
 #include "csv.h"
 
 void manage_main::init()
-{    
+{
+    current_time_ = manage_orders_.get_earliest_time();
     int user_option;
 
     while (true)
@@ -36,6 +37,9 @@ void manage_main::print_menu()
     // 6 continue
     std::cout << "6. Continue " << std::endl;
     std::cout << "====================" << std::endl;
+
+    // current time
+    std::cout << current_time_ << std::endl;
 };
 
 void manage_main::print_help()
@@ -45,11 +49,11 @@ void manage_main::print_help()
 
 void manage_main::print_market_stats()
 {
-    for (const std::string& p : orders.get_known_products())
+    for (const std::string& p : manage_orders_.get_known_products())
     {
         std::cout << "Product: " << p << std::endl;
 
-        std::vector<order_book> order_where = orders.get_orders(order_book_type::ask, p, "2020/03/17 17:01:24.884492");
+        std::vector<order_book> order_where = manage_orders_.get_orders(order_book_type::ask, p, "2020/03/17 17:01:24.884492");
         std::cout << "Asks seen: " << order_where.size() << std::endl;
         std::cout << "Max ask: " << manage_order_book::get_high_price(order_where) << std::endl;
         std::cout << "Min ask: " << manage_order_book::get_low_price(order_where) << std::endl;
